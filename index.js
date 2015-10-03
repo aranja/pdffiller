@@ -55,6 +55,11 @@
                 regFlags = /FieldFlags: ([0-9\t .]+)/,
                 fieldArray = [],
                 currField = {};
+
+            if (!callback && typeof nameRegex === "function") {
+                callback = nameRegex;
+                nameRegex = null;
+            }
             
             if(nameRegex !== null && (typeof nameRegex) == 'object' ) regName = nameRegex;
 
