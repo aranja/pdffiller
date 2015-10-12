@@ -118,7 +118,7 @@
                 tempFDF = "data" + (new Date().getTime()) + ".fdf";
 
             //Write the temp fdf file.
-            fs.writeFile( tempFDF, formData, function( err ) {
+            fs.writeFile( tempFDF, formData, {encoding: 'utf16le'}, function( err ) {
 
                 if ( err ) callback(err);
 
